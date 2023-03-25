@@ -1,4 +1,4 @@
-package org.itstep.oop.MyRepository.Interfaces;
+package org.itstep.oop.myRepository.interfaces;
 
 import java.util.ArrayList;
 
@@ -8,5 +8,5 @@ public interface IReadRepository<TypeId, TypeEntity>
 
     public TypeEntity findById(TypeId id);
 
-    public TypeEntity findByNum(int num);
+    public TypeEntity findByIndex(int index);
 }

@@ -1,4 +1,4 @@
-package org.itstep.oop.MyRepository.Interfaces;
+package org.itstep.oop.myRepository.interfaces;
 
 public interface ICrudRepository <TypeId, TypeEntity> extends
         ICreateRepository <TypeId, TypeEntity>,

@@ -1,4 +1,4 @@
-package org.itstep.oop.MyRepository;
+package org.itstep.oop.myRepository;
 
 import java.util.ArrayList;
 
