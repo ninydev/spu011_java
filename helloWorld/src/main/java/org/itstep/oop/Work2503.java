@@ -38,6 +38,18 @@ public class Work2503 implements Runnable
 
         btn.click();
         btn.dblClick();
+
+        btn.setClick(new IClick() {
+            @Override
+            public void click() {
+                System.out.println("New Click");
+            }
+        });
+        btn.click();
+
+        MyButton newBtn = new MyButton(btn);
+        btn.click();
+        btn.dblClick();
     }
 
     void createInterface(){

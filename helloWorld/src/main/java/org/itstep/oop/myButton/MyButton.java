@@ -29,6 +29,10 @@ public class MyButton implements IClick, IDoubleClick
             this.click.click();
     }
 
+    public void setClick(IClick newClick){
+        this.click = newClick;
+    }
+
     @Override
     public void dblClick() {
         if(this.dblClick != null)
