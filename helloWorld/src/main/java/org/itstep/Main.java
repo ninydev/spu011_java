@@ -1,14 +1,11 @@
 package org.itstep;
 
-import org.itstep.models.DataExample;
+import org.itstep.oop.Work2503;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayModel objectModel = new ArrayModel();
-        objectModel.run();
+        Work2503 w = new Work2503();
+        w.run();
 
-//        DataExample v = new DataExample(10, 20);
-//
-//        System.out.println(v);
     }
 }
