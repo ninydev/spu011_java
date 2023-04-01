@@ -34,6 +34,12 @@ public class Work2503 implements Runnable {
         }
         System.out.println("Find by Id");
         System.out.println(users.findById(toFind.getId()));
+
+        System.out.println("Find by Id1");
+        System.out.println(users.findById1(toFind.getId()));
+
+        System.out.println("Find by Id2");
+        System.out.println(users.findById2(toFind.getId()));
     }
 
 
