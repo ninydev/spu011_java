@@ -18,7 +18,8 @@ public class UserRepository extends AbstractRepository<User, UUID>
 {
     @Override
     public IEntity<?> findByEmail(String email) {
-        return this.data.stream().filter(u-> Objects.equals(u.getEmail(), email)).findFirst().get();
+        // return this.data.stream().filter(u-> Objects.equals(u.getEmail(), email)).findFirst().get();
+        return null;
     }
 
 
