@@ -1,25 +1,20 @@
 package org.itstep.models;
 
-
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.itstep.repository.interfaces.IEntity;
 
+import java.util.HashSet;
 import java.util.UUID;
 
 @Data
-public class User implements IEntity<UUID>
+public class Group  implements IEntity<UUID>
 {
-    public User(){
+    public Group(){
         this.id = UUID.randomUUID();
     }
-
     private UUID id;
-    private String email;
-    private String password;
+    private String name;
 
-    private Group group;
-
+    private HashSet<User> users = new HashSet<>();
 }
