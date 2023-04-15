@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-04-15T06:52:02.119Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="xL2QqwcRFDze0j4hAm2V" version="21.1.5" type="device">
+<mxfile host="app.diagrams.net" modified="2023-04-15T07:46:36.372Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="Gr2AHGb6E_XL1BndIRQa" version="21.1.5" type="device">
   <diagram name="Сторінка-1" id="WaO-RB013yjC9hHzYVbu">
     <mxGraphModel dx="949" dy="677" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -7,8 +7,14 @@
         <mxCell id="dq1WAcfsdhFzc3WLqw_P-10" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="220" y="180" width="590" height="390" as="geometry" />
         </mxCell>
+        <mxCell id="dq1WAcfsdhFzc3WLqw_P-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dq1WAcfsdhFzc3WLqw_P-7" target="dq1WAcfsdhFzc3WLqw_P-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="dq1WAcfsdhFzc3WLqw_P-7" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="470" y="410" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dq1WAcfsdhFzc3WLqw_P-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dq1WAcfsdhFzc3WLqw_P-6" target="dq1WAcfsdhFzc3WLqw_P-3">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="dq1WAcfsdhFzc3WLqw_P-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="480" y="210" width="280" height="120" as="geometry" />
@@ -20,7 +26,7 @@
           <mxGeometry x="524" y="240" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="dq1WAcfsdhFzc3WLqw_P-3" value="Data Store" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="320" y="320" width="120" height="80" as="geometry" />
+          <mxGeometry x="230" y="300" width="210" height="130" as="geometry" />
         </mxCell>
         <mxCell id="dq1WAcfsdhFzc3WLqw_P-4" value="CPU" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="840" y="400" width="160" height="140" as="geometry" />
