@@ -1,77 +1,14 @@
-<mxfile host="app.diagrams.net" modified="2023-04-08T07:29:22.310Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="v_Zv34-N2hkOQxQuoHsN" version="21.1.1" type="device">
+<mxfile host="app.diagrams.net" modified="2023-04-11T15:06:38.773Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="1Ec-XVYXrbPXSri3vbkz" version="21.1.1" type="device">
   <diagram name="Сторінка-1" id="uOcEiK3BSk2fvBV7sjJp">
     <mxGraphModel dx="1434" dy="1287" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--85" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
-          <mxGeometry x="230" y="10" width="420" height="750" as="geometry" />
+        <mxCell id="v_ItPAmmNSNQBLSTMYr--90" value="Device" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="200" width="160" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--86" value="LINQ" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="v_ItPAmmNSNQBLSTMYr--85">
-          <mxGeometry x="30" y="40" width="60" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--87" value="Users.where(u -&amp;gt; u.id == id)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="v_ItPAmmNSNQBLSTMYr--85">
-          <mxGeometry x="40" y="85" width="170" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--88" value="from Users as u&lt;br&gt;where u.id == id&lt;br&gt;select u" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="v_ItPAmmNSNQBLSTMYr--85">
-          <mxGeometry x="40" y="115" width="110" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--89" value="Stream API" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="v_ItPAmmNSNQBLSTMYr--85">
-          <mxGeometry x="30" y="280" width="100" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--80" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="680" y="20" width="450" height="730" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.009;entryY=0.551;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="v_ItPAmmNSNQBLSTMYr--76" target="v_ItPAmmNSNQBLSTMYr--78">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--76" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="520" y="50" width="320" height="620" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--69" value="User" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="620" y="444" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="v_ItPAmmNSNQBLSTMYr--70">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="680" y="510" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--70" value="Group" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="620" y="560" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="v_ItPAmmNSNQBLSTMYr--71" target="v_ItPAmmNSNQBLSTMYr--69">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--71" value="Post" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="620" y="260" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="v_ItPAmmNSNQBLSTMYr--72" target="v_ItPAmmNSNQBLSTMYr--71">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--72" value="Category" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="620" y="140" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--77" value="Object Model" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="640" y="70" width="60" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--78" value="Database" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-          <mxGeometry x="1050" y="200" width="170" height="290" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--81" value="ASP: EntityFramework&lt;br&gt;PHP: Laravel ORM" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="890" y="50" width="150" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--82" value="" style="curved=1;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1220" y="710" as="sourcePoint" />
-            <mxPoint x="980" y="360" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="1100" y="630" />
-              <mxPoint x="970" y="630" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="v_ItPAmmNSNQBLSTMYr--83" value="ASP: AdoNet&lt;br&gt;PHP: MySql PDO" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="1200" y="690" width="120" height="40" as="geometry" />
+        <mxCell id="v_ItPAmmNSNQBLSTMYr--92" value="Device" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="200" width="160" height="200" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
