@@ -2,16 +2,25 @@ package org.itstep.classWorks;
 
 import org.itstep.threads.CurrencyThread;
 import org.itstep.threads.MyRandThread;
+import org.itstep.threads.MyRandThreadSem;
 
 import java.util.concurrent.Exchanger;
+import java.util.concurrent.Semaphore;
 
 public class ClassWork_04_15 implements Runnable {
 
     @Override
     public void run() {
         mySelf();
-        doEx();
+        doSem();
 
+    }
+
+    void doSem(){
+        Semaphore semaphore = new Semaphore(2);
+        for (int i = 0; i < 20; i++) {
+            new Thread(new MyRandThreadSem(semaphore)).start();
+        }
     }
 
     void doEx(){

@@ -1,0 +1,32 @@
+version: '3'
+services:
+  db:
+    image: 'mysql/mysql-server:latest'
+    ports:
+      - '3355:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password!23'
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_DATABASE: 'some_base'
+      MYSQL_USER: 'user_db'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - './db:/var/lib/mysql'
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    networks:
+      - rabbit_network
+  redis:
+    image: 'redis:alpine'
+    ports:
+      - "6377:6379"
+    volumes:
+      - ./redis/data:/data
+    networks:
+      - spu011_network
+
+
+networks:
+  spu011_network:
+    driver: bridge
