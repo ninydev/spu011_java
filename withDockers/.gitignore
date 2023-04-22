@@ -1,2 +1,5 @@
 /db/
 /redis/
+/front_vue/node_modules/
+/mySocket/node_modules/
+/nodejs_jwt/node_modules/
