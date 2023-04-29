@@ -1,5 +1,18 @@
 version: '3'
 services:
+  rabbit.mq:
+    image: rabbitmq:3.10.20-management-alpine
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+    networks:
+      - spu011_network
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
 
   socket.sunny:
     build: ./socket

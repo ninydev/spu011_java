@@ -9,6 +9,7 @@ const serverName = process.env.NAME || 'Unknown';
 
 const pubClient = createClient({ host: 'redis', port: 6379 });
 const subClient = pubClient.duplicate();
+const clientRedis = pubClient.duplicate();
 
 io.adapter(createAdapter(pubClient, subClient));
 
@@ -27,7 +28,7 @@ const JWT_SECRET=process.env.JWT_SECRET || "uTurgrInrmtmuS91HLRwxO7J4N6tAHvSocoi
 
 io.use(function(socket, next){
   if (socket.handshake.query && socket.handshake.query.token){
-    console.log(socket.handshake.query.token)
+    // console.log(socket.handshake.query.token)
     jwt.verify(socket.handshake.query.token, JWT_SECRET, function(err, user) {
       if (err) return next(); // next(new Error('Authentication error'));
       socket.user = user;
@@ -50,8 +51,22 @@ io.use(function(socket, next){
 
   if(socket.user){
     console.log(socket.user)
-    socket.broadcast.emit('new-socket-for-user', socket.user.name);
-    socket.emit('new-socket-for-user', socket.user.name)
+    // Добавить вход о пользователе в редис
+    try {
+      clientRedis.set("User_Id_" + socket.user.id, JSON.stringify(socket.user));
+      let socketsCount = clientRedis.get("socketCount_ByUserId_" + socket.user.id, (err, data) => {
+        if (err) {
+          console.log("Redis Callback err")
+          console.log(err)
+          data = 0
+        }
+        data++
+        clientRedis.set("socketCount_ByUserId_" + socket.user.id, data);
+      });
+    } catch (e) {
+      console.log("Redis Error")
+    }
+    socket.join("roomForUserId_" + socket.user.id)
   }
 
 
@@ -59,6 +74,29 @@ io.use(function(socket, next){
   socket.on('disconnect', () => {
     --socketCount; // Отминусовал пользователя
     console.log("-- socket count: " + socketCount)
+
+    if(socket.user){
+      console.log(socket.user)
+      // Отнять количество соединений для пользователя
+      try {
+        clientRedis.get("socketCount_ByUserId_" + socket.user.id, (err, data) => {
+          if (err) {
+            console.log("Redis Callback err")
+            console.log(err)
+            data = 0
+          }
+          data--
+          if(data > 0)
+            clientRedis.set("socketCount_ByUserId_" + socket.user.id, data);
+          else {
+            clientRedis.del("socketCount_ByUserId_" + socket.user.id)
+          }
+        });
+      } catch (e) {
+        console.log("Redis Error")
+      }
+    }
+
   });
 
 });
