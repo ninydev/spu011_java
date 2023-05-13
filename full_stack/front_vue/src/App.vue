@@ -1,6 +1,12 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import {onMounted} from "vue";
+import {toast} from "vue3-toastify";
+
+onMounted( () => {
+    toast.info("Hello")
+})
 </script>
 
 <template>
