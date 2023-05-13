@@ -73,6 +73,8 @@ services:
 
   redis.socket:
     image: 'redis:alpine'
+    ports:
+      - '6379:6379'
     volumes:
       - './volumes/redis/socket:/data'
     extra_hosts:
@@ -106,6 +108,22 @@ services:
       env_file:
         - .env
 
+  node.api:
+    build: ./node_api
+    volumes:
+      - ./node_api:/usr/src/app
+    command: sh -c " npm install && npm start "
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    networks:
+      - spu011_network
+    depends_on:
+      - redis.socket
+      - redis.cache
+    environment:
+      - NAME=NodeApi
+    env_file:
+      - .env
 
 networks:
   spu011_network:

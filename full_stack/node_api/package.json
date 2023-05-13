@@ -1,0 +1,20 @@
+{
+  "version": "0.0.0",
+  "description": "A simple chat client using rabbit",
+  "main": "index.js",
+  "author": "Oleksandr Nykytin",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "@socket.io/redis-adapter": "^7.0.1",
+    "@socket.io/redis-emitter": "^5.1.0",
+    "amqp-connection-manager": "^4.1.11",
+    "amqplib": "^0.10.3",
+    "express": "4.13.4",
+    "redis": "^4.6.6",
+    "socket.io": "^4.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

@@ -22,6 +22,12 @@ server.listen(port, () => {
 
 io.on('connection', socket => {
 
-    socket.emit('my-name-is', serverName);
+    socket.emit('my-name-is', serverName)
+    console.log("new: " + socket.handshake.address )
+
+    io.on('ping', (data) => {
+        console.log('ping')
+        socket.broadcast.emit('ping', data)
+    })
 
 });

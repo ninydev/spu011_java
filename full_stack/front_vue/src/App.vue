@@ -3,9 +3,11 @@ import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import {onMounted} from "vue";
 import {toast} from "vue3-toastify";
+import {useSocketStore} from "@/stores/socket";
 
+const socketStore = useSocketStore()
 onMounted( () => {
-    toast.info("Hello")
+    socketStore.connect()
 })
 </script>
 
