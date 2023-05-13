@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -36,8 +38,14 @@ public class ApiAnimalController {
      * @return
      */
     @GetMapping("/api/animal")
-    public Iterable<Animal> findAll(){
-        return animalRepository.findAll();
+    public ResponseEntity<List<Animal>> findAll() {
+        List<Animal> animals = new ArrayList<>();
+        animalRepository.findAll().forEach(animals::add);
+        if (animals.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.ok(animals);
+        }
     }
 
     /**
