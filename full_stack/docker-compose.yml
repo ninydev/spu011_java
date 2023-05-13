@@ -1,6 +1,36 @@
 version: '3'
 services:
 
+  db.mysql.main:
+    image: 'mysql/mysql-server:latest'
+    ports:
+      - '3366:3306'
+    env_file:
+      - .env
+    volumes:
+      - './volumes/db/mysql/main:/var/lib/mysql'
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    networks:
+      - spu011_network
+
+
+  java.api:
+    build: ./java_api
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    networks:
+      - spu011_network
+    depends_on:
+      - redis.cache
+      - redis.socket
+      - db.mysql.main
+    expose:
+      - "8080"
+    environment:
+      - NAME=Java_Api
+
+
   storage:
     image: minio/minio:latest
     ports:
@@ -27,6 +57,7 @@ services:
     depends_on:
       - front.vue
       - socket.jonny
+      - java.api
     ports:
       - "80:80"
 
