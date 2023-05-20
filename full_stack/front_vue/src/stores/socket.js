@@ -17,6 +17,15 @@ export const useSocketStore = defineStore('socket', {
             this.socket.on('ping', (data) => {
                 toast.info(data)
             })
+            this.socket.on('connection-user', (data) => {
+                toast.dark(data)
+            })
+            this.socket.on('disconnect-user', (data) => {
+                toast.dark(data)
+            })
+            this.socket.on('chat-gpt', (data) => {
+                toast.success(data.message)
+            })
             this.isConnect = true
 
             this.socket.on('disconnect', (data) => {

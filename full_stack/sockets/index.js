@@ -31,11 +31,13 @@ Promise.all([pubClient.connect(), subClient.connect()]).then(() => {
 
     io.on("connection", (socket) => {
         socket.emit('my-name-is', serverName);
+        socket.broadcast.emit('connection-user', 'Connection ' + socket.handshake.address)
         console.log("new: " + socket.handshake.address);
 
         socket.on("disconnect", data => {
             console.log("dis" + socket.handshake.address)
             console.log(data)
+            socket.broadcast.emit('disconnect-user', 'Disconnect ' + socket.handshake.address)
         })
 
     });
