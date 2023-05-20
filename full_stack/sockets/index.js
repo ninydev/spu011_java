@@ -41,5 +41,14 @@ Promise.all([pubClient.connect(), subClient.connect()]).then(() => {
         })
 
     });
-    io.listen(port);
+    io.listen(port, (err) => {
+        if (err) {
+            console.log(err)
+        }
+        else {
+            console.log("Start listener: " + port)
+        }
+    });
+}).catch(err => {
+    console.log(err)
 });
