@@ -10,7 +10,7 @@ export const useSocketStore = defineStore('socket', {
     actions: {
         connect() {
             if (this.isConnect) return
-            this.socket = io('http://localhost')
+            this.socket = io('/')
             this.socket.on('my-name-is', (data) => {
                 toast.success('Connect to: ' + data)
             })

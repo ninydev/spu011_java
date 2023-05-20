@@ -1,6 +1,21 @@
 version: '3'
 services:
 
+  notifications:
+    build: ./notifications
+    volumes:
+      - ./notifications:/usr/src/app
+    command: sh -c " npm install && npm start "
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    networks:
+      - spu011_network
+    depends_on:
+      - redis.socket
+      - redis.cache
+    env_file:
+      - .env
+
   db.mysql.main:
     image: 'mysql/mysql-server:latest'
     ports:
@@ -124,6 +139,8 @@ services:
       - NAME=NodeApi
     env_file:
       - .env
+
+
 
 networks:
   spu011_network:
