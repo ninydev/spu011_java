@@ -1,5 +1,31 @@
 version: '3'
 services:
+  node.producer:
+    build: ./node_producer
+    volumes:
+      - ./node_producer:/usr/src/app
+    command: sh -c " npm install && npm start "
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    networks:
+      - spu011_network
+    depends_on:
+      - redis.socket
+      - redis.cache
+    env_file:
+      - .env
+
+  rabbit.mq:
+    image: rabbitmq:3.10.20-management-alpine
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    env_file:
+      - .env
+    networks:
+      - spu011_network
+    ports:
+      - "5672:5672"
+      - "15672:15672"
 
   notifications:
     build: ./notifications
