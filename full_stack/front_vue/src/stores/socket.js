@@ -23,7 +23,7 @@ export const useSocketStore = defineStore('socket', {
             this.socket.on('disconnect-user', (data) => {
                 toast.dark(data)
             })
-            this.socket.on('chat-gpt', (data) => {
+            this.socket.on('from-rabbit', (data) => {
                 toast.success(data.message)
             })
             this.isConnect = true

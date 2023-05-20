@@ -1,5 +1,20 @@
 version: '3'
 services:
+  node.consumer:
+    build: ./node_consumer
+    volumes:
+      - ./node_consumer:/usr/src/app
+    command: sh -c " npm install && npm start "
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    networks:
+      - spu011_network
+    depends_on:
+      - redis.socket
+      - redis.cache
+    env_file:
+      - .env
+
   node.producer:
     build: ./node_producer
     volumes:
