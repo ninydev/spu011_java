@@ -35,7 +35,7 @@ amqp.connect(`amqp://${rabbitUser}:${rabbitPassword}@${rabbitServer}:${rabbitPor
             let d = new Date().toLocaleString()
             console.log('Queue: ' + d)
             amqpChannel.sendToQueue(rabbitQueue, Buffer.from(d));
-        }, 5000 )
+        }, 30000 )
     });
 });
 
